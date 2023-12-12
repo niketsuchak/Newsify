@@ -13,11 +13,10 @@ const navigate=useNavigate()
 
 const handleLogout=async()=>{
   try{
-    const res=await axios.post("http://localhost:8800/api/auth/logout",{withCredentials:true})
+    const res=await axios.get("http://localhost:8800/api/auth/logout",{withCredentials:true})
     console.log("logout successful")
     setUser(null)
     navigate("/login")
-
   }
   catch(err){
     console.log(err)
